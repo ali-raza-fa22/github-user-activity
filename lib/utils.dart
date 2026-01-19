@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-Future<void> fetchUserActivuty(String username) async {
+Future<void> fetchUserActivity(String username) async {
   final url = Uri.parse("https://api.github.com/users/$username/events");
   try {
     final res = await http.get(url);
