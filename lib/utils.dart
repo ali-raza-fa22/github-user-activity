@@ -38,7 +38,7 @@ void printUserActivity(List<dynamic> activity) {
 
     switch (type) {
       case 'PushEvent':
-        int commits = event['payload']['commits']?.length ?? 0;
+        int commits = (event['payload']?['commits'] as List?)?.length ?? 0;
         action = 'Pushed $commits commit(s) to $repo on $createdAt';
         break;
       case 'IssuesEvent':
